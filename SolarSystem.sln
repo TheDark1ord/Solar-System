@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolarSystem", "SolarSystem\SolarSystem.vcxproj", "{7318AB0C-322C-4191-8603-0EDE65B31132}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Debug|x64.ActiveCfg = Debug|x64
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Debug|x64.Build.0 = Debug|x64
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Debug|x86.ActiveCfg = Debug|Win32
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Debug|x86.Build.0 = Debug|Win32
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Release|x64.ActiveCfg = Release|x64
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Release|x64.Build.0 = Release|x64
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Release|x86.ActiveCfg = Release|Win32
+		{7318AB0C-322C-4191-8603-0EDE65B31132}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DF4F672-1271-4052-9366-E9DCC9245061}
+	EndGlobalSection
+EndGlobal
