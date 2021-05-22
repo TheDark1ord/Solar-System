@@ -151,7 +151,6 @@ int main()
 					}
 					felapsed -= 15min;
 				}
-				clock.restart();
 			}
 			// Process planet motion in real time
 			else
@@ -168,6 +167,7 @@ int main()
 				}
 				felapsed = 0;
 			}
+			clock.restart();
 		}
 		totalElapsedText.setString("Elapsed time:" + std::to_string((int)std::round((float)(totalElapsedTime / 1d))) + " days");
 		
