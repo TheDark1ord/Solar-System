@@ -49,7 +49,6 @@ BodyRender::BodyRender(Panning* world, BodyModel* model, sf::Color fgColor, sf::
 	show_path = enable_path;
 
 	body.setFillColor(fgColor);
-	body.setRadius(related_model->rad);
 
 	path.setPrimitiveType(sf::PrimitiveType::LinesStrip);
 	path.append(sf::Vertex(sf::Vector2f(related_model->pos), pathColor));
@@ -59,10 +58,17 @@ BodyRender::~BodyRender()
 {
 }
 
-void BodyRender::Draw()
+void BodyRender::Draw(bool show_planet)
 {
+	// Enlarge the planet, so it will be visible from far away
+	// The radius is set to the radius of the Sun
+	if (show_planet && world->getZoom() <= 5.56248e-07)
+		body.setRadius(696340km / world->getZoom() / (1/default_zoom));
+	else
+		body.setRadius(related_model->rad);
+
 	// Update sprite position
-	body.setPosition(sf::Vector2f(related_model->pos.x - related_model->rad, related_model->pos.y - related_model->rad));
+	body.setPosition(sf::Vector2f(related_model->pos.x - body.getRadius(), related_model->pos.y - body.getRadius()));
 
 	//Update path if the last point is outside of body
 	if (enable_path)

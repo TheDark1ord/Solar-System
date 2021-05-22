@@ -63,7 +63,7 @@ inline const unsigned int antialiasingLevel = 8;
 inline const unsigned int maxFPS = 75;
 inline const char* WindowHeader = "Window Header";
 
-inline const long double default_zoom = 1280 / 2er / 500;
+inline const long double default_zoom = 1280 / 3au;
 inline int current_time_frame = 4;
 inline const int time_frame_array[]{ 1s, 1m, 1h, 12h, 1d, 5d, 10d, 20d };
 

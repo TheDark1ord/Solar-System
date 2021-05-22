@@ -32,7 +32,7 @@ public:
 	BodyRender(Panning* world, BodyModel* model, sf::Color fgColor, sf::Color pathColor, bool enable_path = true);
 	~BodyRender();
 
-	void Draw();
+	void Draw(bool show_planet = false);
 	
 	void EnablePathRender();
 	void DisablePathRender();
