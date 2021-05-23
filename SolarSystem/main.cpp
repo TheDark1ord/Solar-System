@@ -2,8 +2,6 @@
 #include "BodyClass.h"
 #include "Panning.h"
 
-using namespace boost::multiprecision;
-
 #define HIDECONSOLE 0
 #if HIDECONSOLE
 	#pragma comment( linker, "/subsystem:windows" )
@@ -221,8 +219,6 @@ Render:
 		window->draw(time_frame_text);
 		window->display();
 	}
-
-
 
 	delete window;
 	window = nullptr;

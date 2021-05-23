@@ -4,8 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
-#include <boost/multiprecision/cpp_int.hpp>
-#include <boost/multiprecision/cpp_bin_float.hpp>
 
 /// Defined literals
 
