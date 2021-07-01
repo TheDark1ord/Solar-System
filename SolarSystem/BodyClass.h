@@ -11,9 +11,11 @@ public:
 	sf::Vector2<long double> vel;
 	long double mass;
 	long double rad;
+	BodyModel* parentPlanet;
 
-	BodyModel(sf::Vector2<long double> pos, long double mass, long double rad);
-	BodyModel(sf::Vector2<long double> pos, sf::Vector2<long double> vel, long double mass, long double rad);
+	BodyModel(sf::Vector2<long double> pos, long double mass, long double rad, BodyModel* parentPlanet = nullptr);
+	BodyModel(sf::Vector2<long double> pos, sf::Vector2<long double> vel, long double mass, long double rad, BodyModel* parentPlanet = nullptr);
+	BodyModel(float angle, long double orbit_rad, long double orbital_vel, long double mass, long double rad, BodyModel* parentPlanet = nullptr);
 
 	void CalculateForce(BodyModel* body, long double time);
 	void ApplyForce(sf::Vector2<long double> forceVector, long double time);
@@ -23,21 +25,24 @@ public:
 class BodyRender
 {
 public:
-	// Struct for rendering bodyes
+	// Class for rendering bodies
 	sf::CircleShape body;
 
 	// Supply model to set rad and position
 	BodyModel* related_model;
 
 	BodyRender(Panning* world, BodyModel* model, sf::Color fgColor, sf::Color pathColor, bool enable_path = true);
+	BodyRender(Panning* world, BodyModel* model, const char* texture_name, sf::Color pathColor, bool enable_path = true);
 	~BodyRender();
 
-	void Draw(bool show_planet = false);
-	
+	virtual void Draw(bool show_planet = false);
+
 	void EnablePathRender();
 	void DisablePathRender();
 
-private:
+protected:
+	sf::Texture* LoadTexture(std::string textureName);
+
 	Panning* world;
 
 	sf::VertexArray path;
@@ -45,4 +50,18 @@ private:
 	bool show_path;
 
 	sf::Color pathColor;
+	sf::Texture* loaded_texture;
+};
+
+class Sun : public BodyRender
+{
+public:
+	Sun(Panning* world, BodyModel* related_model, const char* texture_name);
+	void Draw(long double time);
+
+private:
+	float textureRotation;
+	float textureRotationSpeed = pi / 16;
+
+	sf::RenderStates textureBlending;
 };

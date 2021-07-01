@@ -1,9 +1,9 @@
 #include "Panning.h"
 
 Panning::Panning(sf::RenderWindow* window)
-    :window(window), zoom(1.0), panx(-(Width / 2 / default_zoom)), pany(-(Height / 2 / default_zoom)), bounds(-1, -1, -1, -1)
+	:window(window), zoom(1.0), panx(-(Width / 2 / default_zoom)), pany(-(Height / 2 / default_zoom)), bounds(-1, -1, -1, -1)
 {
-    mouseHold = false;
+	mouseHold = false;
 }
 
 Panning::Panning(sf::RenderWindow* window, sf::IntRect bounds)
@@ -13,23 +13,23 @@ Panning::Panning(sf::RenderWindow* window, sf::IntRect bounds)
 
 void Panning::SetZoom(long double new_zoom)
 {
-    zoom = new_zoom;
+	zoom = new_zoom;
 }
 
 void Panning::SetPan(sf::Vector2<float> newPan)
 {
-    panx = newPan.x;
-    pany = newPan.y;
+	panx = newPan.x;
+	pany = newPan.y;
 }
 
 float Panning::getZoom()
 {
-    return zoom;
+	return zoom;
 }
 
 sf::Vector2f Panning::getPan()
 {
-    return { panx, pany };
+	return { panx, pany };
 }
 
 void Panning::HandleEvent(sf::Event msg)
@@ -82,7 +82,7 @@ void Panning::Draw(sf::CircleShape drawable, const sf::RenderStates& renderState
 		if (drawable.getPosition().y + drawable.getRadius() * drawable.getScale().y < 0)
 			return;*/
 
-	window->draw(drawable);
+	window->draw(drawable, renderStates);
 }
 
 void Panning::Draw(sf::ConvexShape drawable, const sf::RenderStates& renderStates)
@@ -157,7 +157,7 @@ void Panning::Draw(sf::VertexArray vertices, const sf::RenderStates& renderState
 
 void Panning::ZoomToMouse(int stepcount)
 {
-	// Mouse world pos before zoom 
+	// Mouse world pos before zoom
 	sf::Vector2f mouseworldposp = (sf::Vector2f)sf::Mouse::getPosition(*window);
 	mouseworldposp.x /= zoom;
 	mouseworldposp.y /= zoom;

@@ -1,9 +1,14 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
+#include "SFML/Graphics/BlendMode.hpp"
+
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <random>
+#include <time.h>
+#include <filesystem>
 
 /// Defined literals
 
@@ -50,10 +55,11 @@ long double operator"" er(unsigned long long val);
 
 // Mass
 
-
 // General settings
 #if !defined(MYLIB_CONSTANTS_H)
 #define MYLIB_CONSTANTS_H 1
+
+inline const double pi = 3.1415926535897;
 
 inline const long double G = 6.67e-11;
 inline const unsigned int Width = 1280, Height = 720;
@@ -63,7 +69,10 @@ inline const char* WindowHeader = "Window Header";
 
 inline const long double default_zoom = 1280 / 3au;
 inline int current_time_frame = 4;
-inline const int time_frame_array[]{ 1s, 1m, 1h, 12h, 1d, 5d, 10d, 20d };
+inline const int time_frame_array[]{ 1s, 1min, 1h, 12h, 1d, 5d, 10d, 20d };
 
+//Texture paths
+#define DevPath "Files\\Images\\"
+#define ReleasePath "..\\Files\\Images\\"
 
 #endif

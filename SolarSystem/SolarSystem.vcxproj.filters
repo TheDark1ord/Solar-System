@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Assential DLLs">
+      <UniqueIdentifier>{b3926027-1631-40c1-bac7-3500d0bc30c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assential DLLs\Debug">
+      <UniqueIdentifier>{4edf961e-8524-40a2-8cfb-fbb5cf5ca29e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assential DLLs\Release">
+      <UniqueIdentifier>{e6419bcb-5b77-4666-9372-a5a30b2a62cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -38,5 +47,51 @@
     <ClCompile Include="Panning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Files\Images\earth.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Files\Images\mars.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Files\Images\mercury.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Files\Images\venus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Release\sfml-system-2.dll">
+      <Filter>Resource Files\Assential DLLs\Release</Filter>
+    </None>
+    <None Include="..\x64\Release\sfml-audio-2.dll">
+      <Filter>Resource Files\Assential DLLs\Release</Filter>
+    </None>
+    <None Include="..\x64\Release\sfml-graphics-2.dll">
+      <Filter>Resource Files\Assential DLLs\Release</Filter>
+    </None>
+    <None Include="..\x64\Release\sfml-network-2.dll">
+      <Filter>Resource Files\Assential DLLs\Release</Filter>
+    </None>
+    <None Include="..\x64\Release\sfml-window-2.dll">
+      <Filter>Resource Files\Assential DLLs\Release</Filter>
+    </None>
+    <None Include="..\x64\Debug\sfml-audio-d-2.dll">
+      <Filter>Resource Files\Assential DLLs\Debug</Filter>
+    </None>
+    <None Include="..\x64\Debug\sfml-graphics-d-2.dll">
+      <Filter>Resource Files\Assential DLLs\Debug</Filter>
+    </None>
+    <None Include="..\x64\Debug\sfml-network-d-2.dll">
+      <Filter>Resource Files\Assential DLLs\Debug</Filter>
+    </None>
+    <None Include="..\x64\Debug\sfml-system-d-2.dll">
+      <Filter>Resource Files\Assential DLLs\Debug</Filter>
+    </None>
+    <None Include="..\x64\Debug\sfml-window-d-2.dll">
+      <Filter>Resource Files\Assential DLLs\Debug</Filter>
+    </None>
   </ItemGroup>
 </Project>
